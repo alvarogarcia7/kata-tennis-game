@@ -5,19 +5,11 @@ var Tennis = function(){
 };
 
 Tennis.prototype.scoreOne = function(){
-	if(this.scorePlayerOne === 40){
-		this.scorePlayerOne = 41;
-	} else {
-		this.scorePlayerOne = this.calculateNewScore(this.scorePlayerOne);
-	}
+	this.scorePlayerOne = this.calculateNewScore(this.scorePlayerOne);
 }
 
 Tennis.prototype.scoreTwo = function(){
-	if(this.scorePlayerTwo === 40){
-		this.scorePlayerTwo = 41;
-	} else {
-		this.scorePlayerTwo = this.calculateNewScore(this.scorePlayerTwo);
-	}
+	this.scorePlayerTwo = this.calculateNewScore(this.scorePlayerTwo);
 }
 
 Tennis.prototype.score = function(){
@@ -39,11 +31,15 @@ Tennis.prototype.playerOneHasAdvantage = function(){
 }
 
 Tennis.prototype.calculateNewScore = function(oldScore){
-	var increment = this.FIRST_POINT;
-	if(oldScore === 2*this.FIRST_POINT){
-		increment = 10;
+	if(oldScore === 40){
+		oldScore = 41;
+	} else {
+		var increment = this.FIRST_POINT;
+		if(oldScore === 2*this.FIRST_POINT){
+			increment = 10;
+		}
+		oldScore += increment;
 	}
-	oldScore += increment;
 	return oldScore;
 }
 
