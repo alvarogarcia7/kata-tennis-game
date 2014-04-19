@@ -6,6 +6,6 @@ describe("Tennis", function(){
 	it("should score player one", function(){
 		var tennis = new Tennis();
 		tennis.scoreOne();
-		expect("15-0", toBe(tennis.score()));
+		expect("15-0").toBe(tennis.score());
 	});
 });
