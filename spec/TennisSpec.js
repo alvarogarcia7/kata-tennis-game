@@ -62,4 +62,20 @@ describe("Tennis", function(){
 		expect("ADV-40").toBe(tennis.score());
 	}); 
 
+	it("should let player one win after getting the advance", function(){
+		tennis.scoreOne();
+		tennis.scoreOne();
+		tennis.scoreOne();
+		
+		tennis.scoreTwo();
+		tennis.scoreTwo();
+		tennis.scoreTwo();
+		
+		tennis.scoreOne();
+		expect(tennis.score()).toBe("ADV-40");
+		tennis.scoreOne();
+		expect(tennis.score()).toBe("Player 1 Won");
+	}); 
+
+
 });
