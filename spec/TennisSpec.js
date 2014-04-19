@@ -11,26 +11,26 @@ describe("Tennis", function(){
 
 	it("should score player one", function(){
 		tennis.scoreOne();
-		expect("15-0").toBe(tennis.score());
+		expect(tennis.score()).toBe("15-0");
 	});
 
 	it("should score player two", function(){
 		tennis.scoreTwo();
-		expect("0-15").toBe(tennis.score());
+		expect(tennis.score()).toBe("0-15");
 	});
 
 	it("should score player one three times", function(){
 		tennis.scoreOne();
 		tennis.scoreOne();
 		tennis.scoreOne();
-		expect("40-0").toBe(tennis.score());
+		expect(tennis.score()).toBe("40-0");
 	});
 
 	it("should score player two three times", function(){
 		tennis.scoreTwo();
 		tennis.scoreTwo();
 		tennis.scoreTwo();
-		expect("0-40").toBe(tennis.score());
+		expect(tennis.score()).toBe("0-40");
 	}); 
 
 	it("should let player two win", function(){
@@ -38,7 +38,7 @@ describe("Tennis", function(){
 		tennis.scoreTwo();
 		tennis.scoreTwo();
 		tennis.scoreTwo();
-		expect("Player 2 Won").toBe(tennis.score());
+		expect(tennis.score()).toBe("Player 2 Won");
 	}); 
 	
 	it("should let player one win", function(){
@@ -46,7 +46,7 @@ describe("Tennis", function(){
 		tennis.scoreOne();
 		tennis.scoreOne();
 		tennis.scoreOne();
-		expect("Player 1 Won").toBe(tennis.score());
+		expect(tennis.score()).toBe("Player 1 Won");
 	}); 
 	
 	it("should let player one get the advance", function(){
