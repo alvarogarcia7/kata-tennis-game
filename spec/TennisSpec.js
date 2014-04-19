@@ -8,4 +8,9 @@ describe("Tennis", function(){
 		tennis.scoreOne();
 		expect("15-0").toBe(tennis.score());
 	});
+	it("should score player two", function(){
+		var tennis = new Tennis();
+		tennis.scoreTwo();
+		expect("0-15").toBe(tennis.score());
+	});
 });
