@@ -1,5 +1,8 @@
 var Tennis = function(){
 	this.FIRST_POINT = 15;
+	this.SECOND_POINT = 30;
+	this.THIRD_POINT = 40;
+	this.ADVANTAGE = 41; 
 	this.scorePlayerOne = 0;
 	this.scorePlayerTwo = 0;
 };
@@ -23,22 +26,22 @@ Tennis.prototype.score = function(){
 }
 
 Tennis.prototype.playerTwoHasAdvantage = function(){
-	return this.scorePlayerTwo === 41;	
+	return this.scorePlayerTwo === this.ADVANTAGE;	
 }
 
 Tennis.prototype.playerOneHasAdvantage = function(){
-	return this.scorePlayerOne === 41;	
+	return this.scorePlayerOne === this.ADVANTAGE;
 }
 
 Tennis.prototype.calculateNewScore = function(oldScore){
-	if(oldScore === 40){
-		oldScore = 41;
+	if(oldScore === this.THIRD_POINT){
+		oldScore = this.ADVANTAGE;
+	} else if(oldScore === this.SECOND_POINT){
+		oldScore = this.THIRD_POINT;
+	} else if(oldScore === this.FIRST_POINT){
+		oldScore = this.SECOND_POINT;
 	} else {
-		var increment = this.FIRST_POINT;
-		if(oldScore === 2*this.FIRST_POINT){
-			increment = 10;
-		}
-		oldScore += increment;
+		oldScore = this.FIRST_POINT;
 	}
 	return oldScore;
 }
