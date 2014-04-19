@@ -7,6 +7,10 @@ Tennis.prototype.scoreOne = function(){
 	this.scorePlayerOne += 15;
 }
 
+Tennis.prototype.scoreTwo = function(){
+	this.scorePlayerTwo += 15;
+}
+
 Tennis.prototype.score = function(){
 	return this.scorePlayerOne + "-" + this.scorePlayerTwo;
 }
