@@ -5,7 +5,11 @@ var Tennis = function(){
 };
 
 Tennis.prototype.scoreOne = function(){
-	this.scorePlayerOne += this.FIRST_POINT;
+	var increment = this.FIRST_POINT;
+	if(this.scorePlayerOne === 2*this.FIRST_POINT){
+		increment = 10;
+	}
+	this.scorePlayerOne += increment;
 }
 
 Tennis.prototype.scoreTwo = function(){
