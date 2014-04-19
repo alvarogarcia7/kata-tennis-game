@@ -9,7 +9,7 @@ Tennis.prototype.scoreOne = function(){
 }
 
 Tennis.prototype.scoreTwo = function(){
-	this.scorePlayerTwo += this.FIRST_POINT;
+	this.scorePlayerTwo = this.calculateNewScore(this.scorePlayerTwo);
 }
 
 Tennis.prototype.score = function(){
