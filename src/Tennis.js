@@ -5,11 +5,7 @@ var Tennis = function(){
 };
 
 Tennis.prototype.scoreOne = function(){
-	var increment = this.FIRST_POINT;
-	if(this.scorePlayerOne === 2*this.FIRST_POINT){
-		increment = 10;
-	}
-	this.scorePlayerOne += increment;
+	this.scorePlayerOne = this.calculateNewScore(this.scorePlayerOne);
 }
 
 Tennis.prototype.scoreTwo = function(){
@@ -19,3 +15,13 @@ Tennis.prototype.scoreTwo = function(){
 Tennis.prototype.score = function(){
 	return this.scorePlayerOne + "-" + this.scorePlayerTwo;
 }
+
+Tennis.prototype.calculateNewScore = function(oldScore){
+	var increment = this.FIRST_POINT;
+	if(oldScore === 2*this.FIRST_POINT){
+		increment = 10;
+	}
+	oldScore += increment;
+	return oldScore;
+}
+
