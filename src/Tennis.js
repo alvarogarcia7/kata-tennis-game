@@ -5,7 +5,11 @@ var Tennis = function(){
 };
 
 Tennis.prototype.scoreOne = function(){
-	this.scorePlayerOne = this.calculateNewScore(this.scorePlayerOne);
+	if(this.scorePlayerOne === 40){
+		this.scorePlayerOne = 41;
+	} else {
+		this.scorePlayerOne = this.calculateNewScore(this.scorePlayerOne);
+	}
 }
 
 Tennis.prototype.scoreTwo = function(){
@@ -20,11 +24,18 @@ Tennis.prototype.score = function(){
 	if(this.playerTwoHasAdvantage()){
 		return "Player 2 Won";
 	}
+	if(this.playerOneHasAdvantage()){
+		return "Player 1 Won";
+	}
 	return this.scorePlayerOne + "-" + this.scorePlayerTwo;
 }
 
 Tennis.prototype.playerTwoHasAdvantage = function(){
 	return this.scorePlayerTwo === 41;	
+}
+
+Tennis.prototype.playerOneHasAdvantage = function(){
+	return this.scorePlayerOne === 41;	
 }
 
 Tennis.prototype.calculateNewScore = function(oldScore){
