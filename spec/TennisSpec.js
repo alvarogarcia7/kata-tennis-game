@@ -25,4 +25,11 @@ describe("Tennis", function(){
 		tennis.scoreOne();
 		expect("40-0").toBe(tennis.score());
 	});
+
+	it("should score player two three times", function(){
+		tennis.scoreTwo();
+		tennis.scoreTwo();
+		tennis.scoreTwo();
+		expect("0-40").toBe(tennis.score());
+	}); 
 });
