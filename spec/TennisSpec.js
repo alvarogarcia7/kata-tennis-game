@@ -32,4 +32,12 @@ describe("Tennis", function(){
 		tennis.scoreTwo();
 		expect("0-40").toBe(tennis.score());
 	}); 
+
+	it("should let player two win", function(){
+		tennis.scoreTwo();
+		tennis.scoreTwo();
+		tennis.scoreTwo();
+		tennis.scoreTwo();
+		expect("Player 2 Won").toBe(tennis.score());
+	}); 
 });
